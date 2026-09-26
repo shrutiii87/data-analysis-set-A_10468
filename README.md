@@ -59,7 +59,7 @@ The business objective of this project is to analyze delivery delay patterns fro
 
 ## 🎬 Project Demo
 
-[![Watch Demo](https://img.shields.io/badge/Watch%20Demo-Add%20watch%20Link-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1KmdHnJCddKTHpidKTP1OdhgPBWqPahSM/view?usp=sharing)
+[![Watch Demo](https://img.shields.io/badge/Watch%20Demo-click_to%20watch%20video-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1KmdHnJCddKTHpidKTP1OdhgPBWqPahSM/view?usp=sharing)
 
 📹 Add a link to your project walkthrough video here.
 
