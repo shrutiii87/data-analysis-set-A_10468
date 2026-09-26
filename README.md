@@ -95,6 +95,12 @@ Overall — delay mainly Mumbai hub aur R4 route pe concentrated hai, aur trend 
 | `analysis.xlsx` | Excel: `Raw`, `Lookup`, `Clean`, `Summary` sheets |
 | `Power_BI_dashboard.png` | Dashboard screenshot |
 
+---
+
+<img width="1600" height="820" alt="task 2 " src="https://github.com/user-attachments/assets/ab70e9c2-d3be-498e-a096-2eae7574246c" />
+
+---
+
 ### 📖 Data Dictionary
 
 **`routes` (4 rows)**
