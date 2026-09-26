@@ -184,6 +184,7 @@ Example (Express, 6 records): 4 delayed → `4/6*100 = 66.67%`; `total_delay_day
 
 <img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/76dd39d5-efd1-475f-8855-2b6922596378" />
 
+---
 
 | Sheet | Purpose |
 |---|---|
@@ -198,6 +199,7 @@ Example (Express, 6 records): 4 delayed → `4/6*100 = 66.67%`; `total_delay_day
 
 <img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/68802ff9-bbaa-4e0e-b02e-b2f884171887" />
 
+---
 
 Run `setup.sql` first, then `queries.sql`:
 
@@ -267,16 +269,6 @@ df.to_csv('clean_data.csv', index=False)
 
 Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type summary → `P3` monthly delay chart → export CSVs.
 
----
-
-## 📗 Excel Sheet Guide (`analysis.xlsx`)
-
-| Sheet | Purpose |
-|---|---|
-| **Raw** | Original 13-row data, untouched |
-| **Lookup** | Route → route name → service type reference table |
-| **Clean** | Deduplicated (12 rows) + `delay_days` formula + cleaning-check box (13→12, 1 duplicate removed) |
-| **Summary** | PivotTables: delay by hub, delay by service type × month |
 
 ---
 
