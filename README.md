@@ -31,7 +31,6 @@ A logistics company wants to understand where and why its deliveries are running
 <img src="https://img.shields.io/badge/PivotTable-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
 <img src="https://img.shields.io/badge/SUMIFS-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
 <img src="https://img.shields.io/badge/DAX_Measures-Calc--Column%20%7C%20SUMX%20%7C%20DIVIDE-EC4899?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Data_Cleaning-Deduplication%20%7C%%20%7C%20Validation-059669?style=for-the-badge"/>
 
 </div>
 
