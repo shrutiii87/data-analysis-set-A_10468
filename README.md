@@ -180,7 +180,24 @@ Example (Express, 6 records): 4 delayed → `4/6*100 = 66.67%`; `total_delay_day
 
 ---
 
-## 🧮 SQL Setup & Query Execution Steps
+## 📊 TASK :- 1 Excel Sheet Guide 
+
+<img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/76dd39d5-efd1-475f-8855-2b6922596378" />
+
+
+| Sheet | Purpose |
+|---|---|
+| `Raw` | Original, unedited `deliveries` data (13 rows) plus a row-count check cell |
+| `Lookup` | Route reference table (`route_id`, `route_name`, `service_type`) used for lookups |
+| `Clean` | Deduplicated + merged data (12 rows) with `delay_days` calculated; includes a Cleaning Check panel (Before Row Count 13 → After Row Count 12 → Duplicate Removed 1) |
+| `Summary` | PivotTable-based summary — total delay days by hub, and total delay days by service type × month |
+
+---
+
+## 🧮 TASK :- 2  SQL Setup & Query Execution Steps
+
+<img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/68802ff9-bbaa-4e0e-b02e-b2f884171887" />
+
 
 Run `setup.sql` first, then `queries.sql`:
 
