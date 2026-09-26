@@ -14,18 +14,30 @@ A logistics company wants to understand where and why its deliveries are running
 
 ## 📌 Overview
 
-Analysis of 12 delivery records (4 routes, 4 hubs, 3 months: Jan–Mar) using **SQL, Python, Excel, and Power BI**, with results reconciled across all four tools.
+Delivery Delay Analysis to identify which service type has the highest delay burden and which hub needs priority attention. Done across four modules — Excel, Power BI, SQL, and Python — using deliveries and routes datasets linked by route_id. Includes duplicate removal, delay_days derivation, and analysis by service type, hub, route, and month.
 
 ---
 
 ## 🎯 Business Objective
 
-Identify where and why deliveries are getting delayed, so operational fixes can be prioritized by service type, route, and hub.
+The business objective of this project is to analyze delivery delay patterns from route-level delivery data to answer two key questions — which service type (Standard vs Express) contributes most to overall delay burden and which hub requires immediate attention. The analysis aims to support operational decisions by identifying high-delay routes and hubs, understanding delay trends over time, and recommending targeted improvements to reduce delays and enhance service reliability.
 
-### Business Questions Answered
+---
 
-1. Which service type (Express vs Standard) has the most total delay days, and which routes cross the significant-delay threshold (> 8 total delay days)?
-2. Which hubs contribute the most delay, and how does total delay trend month over month (Jan → Mar)?
+### 🚚 Business Question 
+
+Q1 — Kis service type / route / hub me sabse zyada delay:
+
+Service type: Standard top hai — 21 total delay days vs Express ke 12. Dono ka incidence rate same hai (66.67%), yani Standard me delays frequent nahi hain, bas jab hote hain to bade hote hain.
+Route: R4 Rural Feeder (Standard) sabse zyada — 16 delay days. Uske baad R1 Metro Link (Express) — 9 days. R3 (5) aur R2 (3) kaafi peeche hain.
+Hub: Mumbai clearly top hai — 22 delay days, jo total 33 ka ~67% hai. Delhi (6), Chennai (5), Ahmedabad (0) — baaki sab minor.
+
+Q2 — Trend aur significant routes:
+
+Monthly delay upward trend me hai: Jan 7 → Feb 9 → Mar 17 — Mar tak delay Jan se double se zyada ho gaya, matlab problem badh rahi hai, stable nahi.
+8 delay-days ka threshold cross karne wale sirf 2 routes hain: R4 (16) aur R1 (9). R2 aur R3 dono threshold ke andar hi rehte hain.
+
+Overall — delay mainly Mumbai hub aur R4 route pe concentrated hai, aur trend bhi upward hai, isliye inhi pe pehle action lena sabse zyada asar karega.
 
 ---
 
@@ -132,41 +144,6 @@ Example (Express, 6 records): 4 delayed → `4/6*100 = 66.67%`; `total_delay_day
 
 ---
 
-## 🗂️ Project Folder Structure
-
-```
-data-analysis-set-A_10468/
-│
-├── README.md
-├── setup.sql
-├── queries.sql
-│
-├── data/
-│   ├── deliveries.csv
-│   └── routes.csv
-│
-├── sql_outputs/
-│   ├── s2a_delay_by_service_type_csv.csv
-│   ├── s2b_routes_significant_delay.csv
-│   ├── s2c_top_two_hubs.csv
-│   └── s3_unmatched_route_check.csv
-│
-├── python/
-│   ├── Delivery_Delay_Analysis.ipynb
-│   ├── clean_data.csv
-│   ├── python_summary.csv
-│   └── python_chart.png
-│
-├── excel/
-│   └── analysis.xlsx
-│
-└── powerbi/
-    ├── delivery_dashboard.pbix
-    └── Power_BI_dashboard.png
-```
-
----
-
 ## 🧮 SQL Setup & Query Execution Steps
 
 Run `setup.sql` first, then `queries.sql`:
@@ -252,6 +229,10 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 
 ## 📊 Power BI Data-Source Refresh Instructions
 
+<img width="575" height="326" alt="Power BI dashboard" src="https://github.com/user-attachments/assets/14bca64b-011e-4490-bb1b-aaf7be8166b0" />
+
+---
+
 1. Open `.pbix` in Power BI Desktop.
 2. **Home → Transform Data → Data Source Settings**.
 3. Select the `clean_data.csv` source → **Change Source…**.
@@ -276,16 +257,20 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 
 ## 🔗 Cross-Tool Reconciliation
 
-**Total delay days — Mumbai hub**
+## 🔁 Cross-Tool Reconciliation
 
-| Tool | Value | Source |
-|---|---|---|
-| SQL | 22 | `s2c_top_two_hubs.csv` |
-| Python | 22 | `clean_data.csv` grouped by `hub` |
-| Excel | 22 | `Summary` PivotTable |
-| Power BI | 22 | Dashboard, hub = Mumbai |
+**Metric:** Total delay days
 
-✅ All four tools match exactly — no rounding needed (integer sums).
+| Tool | Value |
+|---|---|
+| Python | 33 |
+| SQL | 33 |
+| Excel | 33 |
+| Power BI | 42 |
+
+**Note:** Power BI uses the raw 13-row source (duplicate `record_id 12` not removed). Python/SQL/Excel dedupe first → 33. No rounding issue; gap = 1 duplicate row × 9 delay days.
+
+---
 
 **Overall delay incidence rate — all 12 deliveries**
 
@@ -305,22 +290,3 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 - Small sample (12 rows) — findings are directional, not statistically robust.
 - Early/on-time deliveries all treated as `delay_days = 0`.
 - Only 1 duplicate found; no other data-quality issues after cleaning.
-
----
-
-## 🎬 Working Video
-
-**URL:** _[Add link]_
-**Duration:** _[Add duration]_
-
----
-
-## 📚 References
-
-No external code or datasets used beyond the assignment-provided `deliveries.csv` / `routes.csv`.
-
----
-
-## ✍️ Authorship Declaration
-
-All work in this repository is my own except where cited.
