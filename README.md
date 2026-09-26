@@ -320,3 +320,13 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 - Small sample (12 rows) — findings are directional, not statistically robust.
 - Early/on-time deliveries all treated as `delay_days = 0`.
 - Only 1 duplicate found; no other data-quality issues after cleaning.
+
+---
+
+
+## 🙏 Thank You
+
+Thank you for taking the time to explore this project!
+Your feedback, suggestions, and contributions are always welcome.
+
+⭐ If you found this project helpful, don't forget to **star the repository** and share it with others.
