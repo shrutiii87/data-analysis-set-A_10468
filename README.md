@@ -52,20 +52,8 @@ The business objective of this project is to analyze delivery delay patterns fro
 
 ---
 
-## 🚚 Business Question 
+<img width="1536" height="1024" alt="7ca0ec1e-2ae6-43dd-8681-9e4b6d2ee6bb" src="https://github.com/user-attachments/assets/de8dcf8e-6b36-4a0f-ba3f-30b50701b9fd" />
 
-Q1 — Kis service type / route / hub me sabse zyada delay:
-
-Service type: Standard top hai — 21 total delay days vs Express ke 12. Dono ka incidence rate same hai (66.67%), yani Standard me delays frequent nahi hain, bas jab hote hain to bade hote hain.
-Route: R4 Rural Feeder (Standard) sabse zyada — 16 delay days. Uske baad R1 Metro Link (Express) — 9 days. R3 (5) aur R2 (3) kaafi peeche hain.
-Hub: Mumbai clearly top hai — 22 delay days, jo total 33 ka ~67% hai. Delhi (6), Chennai (5), Ahmedabad (0) — baaki sab minor.
-
-Q2 — Trend aur significant routes:
-
-Monthly delay upward trend me hai: Jan 7 → Feb 9 → Mar 17 — Mar tak delay Jan se double se zyada ho gaya, matlab problem badh rahi hai, stable nahi.
-8 delay-days ka threshold cross karne wale sirf 2 routes hain: R4 (16) aur R1 (9). R2 aur R3 dono threshold ke andar hi rehte hain.
-
-Overall — delay mainly Mumbai hub aur R4 route pe concentrated hai, aur trend bhi upward hai, isliye inhi pe pehle action lena sabse zyada asar karega.
 
 ---
 
