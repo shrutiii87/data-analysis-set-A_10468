@@ -239,7 +239,12 @@ Same pattern is reused for the route (`> 8` filter), hub (`LIMIT 2`), and unmatc
 
 ---
 
-## 🐍 Python Environment Setup & Run Instructions
+## 🐍 TASK :- 3 Python Environment Setup & Run Instructions
+
+<img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/03c99021-5bdd-47bf-a8ca-8d7327180385" />
+
+
+---
 
 ```bash
 python -m venv .venv
@@ -274,6 +279,9 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 
 ## 📊 Power BI Data-Source Refresh Instructions
 
+<img width="1200" height="500" alt="task 2 " src="https://github.com/user-attachments/assets/4bc49d82-f9d6-449e-988f-93c5fad510b4" />
+
+
 ---
 
 1. Open `.pbix` in Power BI Desktop.
@@ -299,8 +307,6 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 ---
 
 ## 🔗 Cross-Tool Reconciliation
-
-## 🔁 Cross-Tool Reconciliation
 
 **Metric:** Total delay days
 
