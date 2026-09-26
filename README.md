@@ -12,6 +12,17 @@ A logistics company wants to understand where and why its deliveries are running
 
 ---
 
+🔨 Tools used :- 
+
+![Excel](https://img.shields.io/badge/Excel-Microsoft%20365-217346?logo=microsoft-excel&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.2.0-150458?logo=pandas&logoColor=white)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.8.0-11557C?logo=plotly&logoColor=white)
+
+---
+
 ## 📌 Overview
 
 Delivery Delay Analysis to identify which service type has the highest delay burden and which hub needs priority attention. Done across four modules — Excel, Power BI, SQL, and Python — using deliveries and routes datasets linked by route_id. Includes duplicate removal, delay_days derivation, and analysis by service type, hub, route, and month.
