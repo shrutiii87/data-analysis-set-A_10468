@@ -1,0 +1,671 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="500"
+     viewBox="0 0 1200 500">
+
+  <defs>
+
+    <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF9A00"/>
+      <stop offset="100%" stop-color="#FF5A00"/>
+    </linearGradient>
+
+    <linearGradient id="darkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#292929"/>
+    </linearGradient>
+
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="12"
+                    flood-color="#000000"
+                    flood-opacity="0.18"/>
+    </filter>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="grid"
+             width="32"
+             height="32"
+             patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32"
+            fill="none"
+            stroke="#111111"
+            stroke-opacity="0.05"/>
+    </pattern>
+
+    <!-- Animated data path -->
+    <path id="dataFlow"
+          d="M700 300
+             C750 300 760 250 815 250
+             C870 250 875 315 930 315
+             C980 315 1000 260 1060 260"
+          fill="none"/>
+
+    <style>
+      .title {
+        font:700 40px Arial, Helvetica, sans-serif;
+        fill:#111111;
+      }
+
+      .subtitle {
+        font:500 17px Arial, Helvetica, sans-serif;
+        fill:#555555;
+      }
+
+      .eyebrow {
+        font:700 13px Arial, Helvetica, sans-serif;
+        letter-spacing:2.5px;
+        fill:#FF6A00;
+      }
+
+      .body {
+        font:400 15px Arial, Helvetica, sans-serif;
+        fill:#444444;
+      }
+
+      .small {
+        font:600 10px Arial, Helvetica, sans-serif;
+        letter-spacing:1.4px;
+        fill:#777777;
+      }
+
+      .code {
+        font:500 13px "Courier New", monospace;
+        fill:#FFFFFF;
+      }
+    </style>
+
+  </defs>
+
+
+  <!-- ================================================= -->
+  <!-- BACKGROUND -->
+  <!-- ================================================= -->
+
+  <rect width="1200"
+        height="500"
+        rx="28"
+        fill="#FFFFFF"/>
+
+  <rect width="1200"
+        height="500"
+        rx="28"
+        fill="url(#grid)"/>
+
+  <rect x="1"
+        y="1"
+        width="1198"
+        height="498"
+        rx="28"
+        fill="none"
+        stroke="#111111"
+        stroke-width="2"/>
+
+
+  <!-- ================================================= -->
+  <!-- TOP ACCENT -->
+  <!-- ================================================= -->
+
+  <rect x="45"
+        y="38"
+        width="80"
+        height="5"
+        rx="3"
+        fill="url(#orangeGrad)">
+
+    <animate attributeName="width"
+             values="80;135;80"
+             dur="2.4s"
+             repeatCount="indefinite"/>
+
+  </rect>
+
+
+  <!-- ================================================= -->
+  <!-- LEFT SIDE -->
+  <!-- ================================================= -->
+
+  <text x="45"
+        y="78"
+        class="eyebrow">
+    TASK 2 / DATA ANALYTICS
+  </text>
+
+
+  <text x="45"
+        y="128"
+        class="title">
+    SQL
+  </text>
+
+
+  <text x="45"
+        y="159"
+        class="subtitle">
+    Query • Join • Group • Analyze
+  </text>
+
+
+  <text x="45"
+        y="201"
+        class="body">
+    Transform delivery data into
+  </text>
+
+  <text x="45"
+        y="224"
+        class="body">
+    structured analytical insights.
+  </text>
+
+
+  <!-- ================================================= -->
+  <!-- SQL CONCEPT CARD -->
+  <!-- ================================================= -->
+
+  <rect x="45"
+        y="258"
+        width="490"
+        height="105"
+        rx="18"
+        fill="#111111"
+        filter="url(#shadow)"/>
+
+  <rect x="45"
+        y="258"
+        width="7"
+        height="105"
+        rx="3"
+        fill="url(#orangeGrad)"/>
+
+
+  <text x="72"
+        y="286"
+        class="small"
+        fill="#AAAAAA">
+    SQL WORKFLOW
+  </text>
+
+
+  <text x="72"
+        y="315"
+        class="code">
+    SELECT • JOIN • GROUP BY
+  </text>
+
+  <text x="72"
+        y="340"
+        class="code">
+    HAVING • ORDER BY
+  </text>
+
+
+  <!-- Animated cursor -->
+
+  <rect x="280"
+        y="302"
+        width="3"
+        height="18"
+        fill="#FF6A00">
+
+    <animate attributeName="opacity"
+             values="1;0;1"
+             dur="0.9s"
+             repeatCount="indefinite"/>
+
+  </rect>
+
+
+  <!-- ================================================= -->
+  <!-- SQL PIPELINE -->
+  <!-- ================================================= -->
+
+  <g transform="translate(45 408)">
+
+    <text x="0"
+          y="0"
+          class="small">
+      TABLES
+    </text>
+
+    <path d="M55 0 H115"
+          stroke="#111111"
+          stroke-width="2"/>
+
+    <circle cx="125"
+            cy="0"
+            r="8"
+            fill="#FF6A00">
+
+      <animate attributeName="r"
+               values="6;11;6"
+               dur="1.5s"
+               repeatCount="indefinite"/>
+
+    </circle>
+
+
+    <path d="M136 0 H195"
+          stroke="#111111"
+          stroke-width="2"/>
+
+    <text x="205"
+          y="0"
+          class="small">
+      JOIN
+    </text>
+
+
+    <path d="M245 0 H305"
+          stroke="#111111"
+          stroke-width="2"/>
+
+    <circle cx="315"
+            cy="0"
+            r="8"
+            fill="#111111"/>
+
+
+    <path d="M326 0 H390"
+          stroke="#111111"
+          stroke-width="2"/>
+
+    <text x="400"
+          y="0"
+          class="small">
+      RESULT
+    </text>
+
+  </g>
+
+
+  <!-- ================================================= -->
+  <!-- RIGHT SQL ANALYTICS PANEL -->
+  <!-- ================================================= -->
+
+  <rect x="585"
+        y="38"
+        width="570"
+        height="424"
+        rx="26"
+        fill="#111111"
+        filter="url(#shadow)"/>
+
+  <rect x="585"
+        y="38"
+        width="570"
+        height="424"
+        rx="26"
+        fill="none"
+        stroke="#FF6A00"
+        stroke-width="2"/>
+
+
+  <text x="620"
+        y="76"
+        class="eyebrow">
+    SQL ANALYSIS
+  </text>
+
+
+  <text x="620"
+        y="108"
+        font-family="Arial"
+        font-size="25"
+        font-weight="700"
+        fill="#FFFFFF">
+    Delivery Data Query Engine
+  </text>
+
+
+  <text x="620"
+        y="133"
+        font-family="Arial"
+        font-size="13"
+        fill="#BDBDBD">
+    Relational data → analytical result
+  </text>
+
+
+  <!-- ================================================= -->
+  <!-- DATABASE TABLES -->
+  <!-- ================================================= -->
+
+  <!-- Deliveries table -->
+
+  <g transform="translate(620 165)">
+
+    <rect width="145"
+          height="116"
+          rx="12"
+          fill="#FFFFFF"/>
+
+    <rect width="145"
+          height="28"
+          rx="12"
+          fill="#FF6A00"/>
+
+    <rect y="16"
+          width="145"
+          height="12"
+          fill="#FF6A00"/>
+
+    <text x="72"
+          y="19"
+          text-anchor="middle"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          fill="#FFFFFF">
+      DELIVERIES
+    </text>
+
+
+    <text x="15"
+          y="50"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      route_id
+    </text>
+
+    <text x="15"
+          y="70"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      actual_days
+    </text>
+
+    <text x="15"
+          y="90"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      promised_days
+    </text>
+
+    <text x="15"
+          y="110"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      service_type
+    </text>
+
+  </g>
+
+
+  <!-- Routes table -->
+
+  <g transform="translate(620 305)">
+
+    <rect width="145"
+          height="92"
+          rx="12"
+          fill="#FFFFFF"/>
+
+    <rect width="145"
+          height="28"
+          rx="12"
+          fill="#111111"/>
+
+    <rect y="16"
+          width="145"
+          height="12"
+          fill="#111111"/>
+
+    <text x="72"
+          y="19"
+          text-anchor="middle"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          fill="#FFFFFF">
+      ROUTES
+    </text>
+
+
+    <text x="15"
+          y="50"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      route_id
+    </text>
+
+    <text x="15"
+          y="70"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      hub
+    </text>
+
+    <text x="15"
+          y="88"
+          font-family="Courier New"
+          font-size="11"
+          fill="#111111">
+      route_name
+    </text>
+
+  </g>
+
+
+  <!-- ================================================= -->
+  <!-- JOIN CONNECTION -->
+  <!-- ================================================= -->
+
+  <path d="M765 220
+           C800 220 800 350 840 350"
+        fill="none"
+        stroke="#FF6A00"
+        stroke-width="3"
+        stroke-dasharray="8 7">
+
+    <animate attributeName="stroke-dashoffset"
+             from="0"
+             to="-45"
+             dur="1.2s"
+             repeatCount="indefinite"/>
+
+  </path>
+
+
+  <circle cx="805"
+          cy="285"
+          r="8"
+          fill="#FF6A00"
+          filter="url(#glow)">
+
+    <animate attributeName="r"
+             values="6;11;6"
+             dur="1.5s"
+             repeatCount="indefinite"/>
+
+  </circle>
+
+
+  <text x="790"
+        y="270"
+        font-family="Arial"
+        font-size="10"
+        font-weight="700"
+        fill="#FF6A00">
+    JOIN
+  </text>
+
+
+  <!-- ================================================= -->
+  <!-- ANOTHER ANIMATED OBJECT — DATABASE CYLINDER -->
+  <!-- ================================================= -->
+
+  <g transform="translate(850 175)"
+     filter="url(#glow)">
+
+    <!-- Database body -->
+
+    <path d="M0 18
+             V105
+             C0 119 34 129 70 129
+             C106 129 140 119 140 105
+             V18 Z"
+          fill="#202020"
+          stroke="#FFFFFF"
+          stroke-opacity="0.25"
+          stroke-width="2"/>
+
+
+    <!-- Top -->
+
+    <ellipse cx="70"
+             cy="18"
+             rx="70"
+             ry="18"
+             fill="#FFFFFF"
+             stroke="#FF6A00"
+             stroke-width="3"/>
+
+
+    <!-- Middle rings -->
+
+    <ellipse cx="70"
+             cy="60"
+             rx="70"
+             ry="17"
+             fill="none"
+             stroke="#FF6A00"
+             stroke-width="2"
+             opacity="0.7"/>
+
+    <ellipse cx="70"
+             cy="101"
+             rx="70"
+             ry="17"
+             fill="none"
+             stroke="#FFFFFF"
+             stroke-opacity="0.25"
+             stroke-width="2"/>
+
+
+    <!-- Animated data pulse -->
+
+    <circle cx="70"
+             cy="18"
+             r="7"
+             fill="#FF6A00">
+
+      <animate attributeName="cy"
+               values="18;105;18"
+               dur="2.6s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="r"
+               values="6;10;6"
+               dur="2.6s"
+               repeatCount="indefinite"/>
+
+    </circle>
+
+  </g>
+
+
+  <!-- ================================================= -->
+  <!-- DATA FLOW PARTICLES -->
+  <!-- ================================================= -->
+
+  <g filter="url(#glow)">
+
+    <circle r="5"
+            fill="#FF6A00">
+
+      <animateMotion dur="2.8s"
+                     repeatCount="indefinite">
+
+        <mpath href="#dataFlow"/>
+
+      </animateMotion>
+
+    </circle>
+
+
+    <circle r="4"
+            fill="#FFFFFF">
+
+      <animateMotion dur="2.8s"
+                     begin="1.4s"
+                     repeatCount="indefinite">
+
+        <mpath href="#dataFlow"/>
+
+      </animateMotion>
+
+    </circle>
+
+  </g>
+
+
+  <!-- ================================================= -->
+  <!-- QUERY RESULT -->
+  <!-- ================================================= -->
+
+  <g transform="translate(875 345)">
+
+    <rect width="225"
+          height="52"
+          rx="14"
+          fill="#FF6A00">
+
+      <animate attributeName="opacity"
+               values="1;0.7;1"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <text x="112"
+          y="21"
+          text-anchor="middle"
+          font-family="Arial"
+          font-size="10"
+          font-weight="700"
+          letter-spacing="1.2"
+          fill="#FFFFFF">
+      QUERY RESULT
+    </text>
+
+
+    <text x="112"
+          y="39"
+          text-anchor="middle"
+          font-family="Arial"
+          font-size="12"
+          font-weight="700"
+          fill="#FFFFFF">
+      DELAY • ROUTE • HUB
+    </text>
+
+  </g>
+
+
+  <!-- FOOTER -->
+
+  <text x="620"
+        y="440"
+        font-family="Arial"
+        font-size="10"
+        font-weight="600"
+        letter-spacing="1.4px"
+        fill="#777777">
+    SQL  •  TABLES  •  JOIN  •  GROUP BY  •  HAVING  •  ORDER BY
+  </text>
+
+</svg>
