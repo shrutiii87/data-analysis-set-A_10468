@@ -1,21 +1,14 @@
 # 🚚 Delivery Delay Analysis
 
+A logistics company wants to understand where and why its deliveries are running late, so it can decide which service type and which hubs need operational attention. This project analyzes 12 delivery records across 4 routes and 4 hubs (Jan–Mar) using SQL, Python, Excel, and Power BI, and answers two business questions.
+
+---
+
 **Student Name:** Shruti Bhawsar
 **GR No:** 10468
 **Assigned Set:** Set A
 **Repository:** `data-analysis-set-A_10468`
 
-<div>
-
-<img src="https://img.shields.io/badge/SQL-SQLite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white"/>
-<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Pandas-2.2.x-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-<img src="https://img.shields.io/badge/Matplotlib-3.8.x-11557C?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-<img src="https://img.shields.io/badge/Excel-Microsoft%20365-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white"/>
-<img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
-
-</div>
 
 ---
 
