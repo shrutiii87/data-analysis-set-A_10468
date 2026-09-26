@@ -229,8 +229,6 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 
 ## 📊 Power BI Data-Source Refresh Instructions
 
-<img width="690" height="350" alt="Power BI dashboard" src="https://github.com/user-attachments/assets/14bca64b-011e-4490-bb1b-aaf7be8166b0" />
-
 ---
 
 1. Open `.pbix` in Power BI Desktop.
