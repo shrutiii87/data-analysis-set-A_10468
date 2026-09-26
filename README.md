@@ -5,6 +5,18 @@
 **Assigned Set:** Set A
 **Repository:** `data-analysis-set-A_10468`
 
+<div>
+
+<img src="https://img.shields.io/badge/SQL-SQLite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/Pandas-2.2.x-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+<img src="https://img.shields.io/badge/Matplotlib-3.8.x-11557C?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Excel-Microsoft%20365-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white"/>
+<img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+
+</div>
+
 ---
 
 ## 📌 Overview
@@ -164,21 +176,41 @@ data-analysis-set-A_10468/
 
 ## 🧮 SQL Setup & Query Execution Steps
 
-```bash
-# 1. Run setup first
-sqlite3 delivery.db < setup.sql
+Run `setup.sql` first, then `queries.sql`:
 
-# 2. Then run the analysis queries
+```bash
+sqlite3 delivery.db < setup.sql
 sqlite3 delivery.db < queries.sql
 ```
 
-`queries.sql` runs, in order:
+**`setup.sql`** — creates tables + loads data (key part):
 
-1. Total delay days by `service_type`
-2. Routes with total delay days `> 8`
-3. Top 2 hubs by total delay days
-4. Unmatched-route count (data-quality check → expect `0`)
-5. Row-count check (expect 12 deliveries, 4 routes)
+```sql
+CREATE TABLE deliveries (
+    record_id INTEGER PRIMARY KEY,
+    month VARCHAR(10) NOT NULL,
+    route_id VARCHAR(10) NOT NULL,
+    hub VARCHAR(50) NOT NULL,
+    promised_days INTEGER NOT NULL,
+    actual_days INTEGER NOT NULL,
+    CONSTRAINT fk_deliveries_route
+        FOREIGN KEY (route_id) REFERENCES routes(route_id)
+);
+```
+
+**`queries.sql`** — the core delay-metric query (repeated per grouping):
+
+```sql
+SELECT
+    r.service_type,
+    SUM(GREATEST(d.actual_days - d.promised_days, 0)) AS total_delay_days
+FROM deliveries AS d
+JOIN routes AS r ON d.route_id = r.route_id
+GROUP BY r.service_type
+ORDER BY total_delay_days DESC;
+```
+
+Same pattern is reused for the route (`> 8` filter), hub (`LIMIT 2`), and unmatched-route (`LEFT JOIN ... IS NULL`) queries — see `queries.sql` for the full set of 5.
 
 ---
 
@@ -189,13 +221,28 @@ python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
 pip install -r requirements.txt
-# equivalent to: pip install pandas matplotlib jupyter
-
-jupyter notebook python/Delivery_Delay_Analysis.ipynb
-# or: python python/analysis.py
+python python/analysis.py
 ```
 
-Notebook stages: `P1` load/clean/merge → `P2` derive `delay_days`/`is_delayed` + service-type summary → `P3` monthly delay chart → export `clean_data.csv` / `python_summary.csv`.
+Or run interactively:
+
+```bash
+jupyter notebook python/Delivery_Delay_Analysis.ipynb
+```
+
+**Core cleaning + metric logic** (from the notebook):
+
+```python
+deliveries = deliveries.drop_duplicates()
+df = deliveries.merge(routes, on='route_id', how='left')
+
+df['delay_days'] = (df['actual_days'] - df['promised_days']).clip(lower=0)
+df['is_delayed'] = df['actual_days'] > df['promised_days']
+
+df.to_csv('clean_data.csv', index=False)
+```
+
+Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type summary → `P3` monthly delay chart → export CSVs.
 
 ---
 
@@ -215,7 +262,7 @@ Notebook stages: `P1` load/clean/merge → `P2` derive `delay_days`/`is_delayed`
 1. Open `.pbix` in Power BI Desktop.
 2. **Home → Transform Data → Data Source Settings**.
 3. Select the `clean_data.csv` source → **Change Source…**.
-4. Point to the cloned repo path, e.g.:
+4. Point to the cloned repo path:
    ```
    .../data-analysis-set-A_10468/python/clean_data.csv
    ```
