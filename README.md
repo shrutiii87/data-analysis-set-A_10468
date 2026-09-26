@@ -1,3 +1,6 @@
+<img width="1200" height="500" alt="1st" src="https://github.com/user-attachments/assets/fe0beccc-e325-49ea-892a-d2cd2e851986" />
+
+
 # 🚚 Delivery Delay Analysis
 
 A logistics company wants to understand where and why its deliveries are running late, so it can decide which service type and which hubs need operational attention. This project analyzes 12 delivery records across 4 routes and 4 hubs (Jan–Mar) using SQL, Python, Excel, and Power BI, and answers two business questions.
