@@ -229,7 +229,7 @@ Notebook stages: `P1` load/clean/merge → `P2` derive metrics + service-type su
 
 ## 📊 Power BI Data-Source Refresh Instructions
 
-<img width="575" height="326" alt="Power BI dashboard" src="https://github.com/user-attachments/assets/14bca64b-011e-4490-bb1b-aaf7be8166b0" />
+<img width="600" height="426" alt="Power BI dashboard" src="https://github.com/user-attachments/assets/14bca64b-011e-4490-bb1b-aaf7be8166b0" />
 
 ---
 
