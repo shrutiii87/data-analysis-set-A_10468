@@ -14,12 +14,23 @@ A logistics company wants to understand where and why its deliveries are running
 
 🔨 Tools used :- 
 
-![Excel](https://img.shields.io/badge/Excel-Microsoft%20365-217346?logo=microsoft-excel&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-F2C811?logo=powerbi&logoColor=black)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-2.2.0-150458?logo=pandas&logoColor=white)
-![matplotlib](https://img.shields.io/badge/matplotlib-3.8.0-11557C?logo=plotly&logoColor=white)
+<div style="background:#121212; padding:20px; font-family: Segoe UI, sans-serif;">
+
+<h2 style="color:white; border-bottom:1px solid #333; padding-bottom:10px;">🛠️ Tools Used</h2>
+
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:15px;">
+
+<!-- ROW 1 -->
+<span style="background:#2f74b5; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">🐍 PYTHON</span>
+<span style="background:#217346; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">📊 EXCEL</span>
+<span style="background:#F2C811; color:black; padding:8px 16px; font-weight:bold; font-size:14px;">📈 POWER BI</span>
+<span style="background:#2a1a5a; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">🐼 PANDAS</span>
+<span style="background:#ff8c00; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">🗄️ MYSQL</span>
+<span style="background:#00648f; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">💾 SQL</span>
+<span style="background:#1a5d8a; color:white; padding:8px 16px; font-weight:bold; font-size:14px;">📉 MATPLOTLIB</span>
+</div>
+
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
 
 ---
 
